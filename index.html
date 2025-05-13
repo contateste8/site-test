@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrar no servidor do Brookhaven</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-shadow: 0 0 10px #335cfb;
+    }
+
+    input[type="text"] {
+      padding: 12px 15px;
+      border: none;
+      border-radius: 8px;
+      width: 300px;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(51, 92, 251, 0.2);
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input[type="text"]:focus {
+      box-shadow: 0 0 15px #335cfb;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #335cfb;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 0 15px #335cfb, 0 0 30px #335cfb88, 0 0 45px #335cfb55;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #335cfb, 0 0 40px #335cfbaa, 0 0 60px #335cfb88;
+    }
+  </style>
+</head>
+<body>
+  <h2>Entrar no servidor do Brookhaven por JobId</h2>
+  <input type="text" id="jobIdInput" placeholder="Digite o JobId" />
+  <button onclick="entrarNoServidor()">Entrar</button>
+
+  <script>
+    function entrarNoServidor() {
+      const jobId = document.getElementById('jobIdInput').value.trim();
+      const placeId = '4924922222'; // ID do Brookhaven
+      if (jobId) {
+        const link = `roblox://placeID=${placeId}&gameInstanceId=${jobId}`;
+        window.location.href = link;
+      } else {
+        alert("Por favor, digite um JobId válido.");
+      }
+    }
+  </script>
+</body>
+</html>
